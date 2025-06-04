@@ -95,7 +95,28 @@
       let firstNum = document.querySelector('#first-num').value;
       let secondNum = document.querySelector('#second-num').value;
       let operator = document.querySelector('#operator').value;
-      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+
+      try{
+        if(firstNum == "" || secondNum == ""){
+          throw new Error("No empty numbers");
+        }
+
+        if(operator === "/" && Number(secondNum) === 0){
+          throw new Error("Division by zero is illegal");
+        }
+
+        const result = eval(`${firstNum} ${operator} ${secondNum}`);
+        if (isNan(result)){
+          throw new Error("Invalid calculation");
+        }
+
+        output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+      } catch (err) {
+        console.error("Calculation error:", err.message);
+        output.innerHTML = `Error: ${err.message}`;
+      } finally{
+        console.log("Calculation attempted");
+      }
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
