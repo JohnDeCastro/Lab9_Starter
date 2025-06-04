@@ -102,6 +102,119 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    const testObj = {
+      name: "John",
+      age: 28,
+      role: "Student"
+    };
+
+    let count = 0;
+
+    errorBtns.forEach((btn) => {
+      const label = btn.textContent;
+
+      switch(label){
+        case "Console Log":
+          btn.addEventListener("click", () => {
+            console.log("Log message");
+          });
+          break;
+        
+        case "Console Error":
+          btn.addEventListener("click", () => {
+            console.error("Error message");
+          });
+          break;
+        
+        case "Console Count":
+          btn.addEventListener("click", () => {
+            console.count("Console Count");
+          });
+          break;
+
+        case "Console Warn":
+          btn.addEventListener("click", () => {
+            console.warn("Warning message");
+          });
+          break;
+
+        case "Console Assert":
+          btn.addEventListener("click", () => {
+            const x = 1;
+            const y = 2;
+            console.assert(x > y, "Assertion failed: x not greaetr than y");
+          });
+          break;
+
+        case "Console Clear":
+          btn.addEventListener("click", () => {
+            console.clear();
+          });
+          break;
+
+        case "Console Dir":
+          btn.addEventListener("click", () => {
+            console.dir(document.body);
+          });
+          break;
+
+        case "Console dirxml":
+          btn.addEventListener("click", () => {
+            console.dirxml(document);
+          });
+          break;
+
+        case "Console Group Start":
+          btn.addEventListener("click", () => {
+            console.group("My Group");
+            console.log("Inside group 1");
+            console.log("Inside group 2");
+          });
+          break;
+
+        case "Console Group End":
+          btn.addEventListener("click", () => {
+            console.groupEnd();
+          });
+          break;
+
+        case "Console Table":
+          btn.addEventListener("click", () => {
+            console.table([
+              { name: "Jose", age: 21 },
+              { name: "Josephina", age: 22 }
+              { name: "Joe", age: 23 }
+            ]);
+          });
+          break;
+        
+        case "Start Timer":
+          btn.addEventListener("click", () => {
+            console.time("myTimer");
+          });
+          break;
+
+        case "End Timer":
+          btn.addEventListener("click", () => {
+            console.timeEnd("myTimer");
+          });
+          break;
+
+        case "console Trace":
+          btn.addEventListener("click", () => {
+            function levelOne() {
+              levelTwo();
+            }
+            function levelTwo() {
+              console.trace("Trace at level 2");
+            }
+            levelOne();
+          });
+          break;
+      }
+    });
+
   </script>
 </body>
 
