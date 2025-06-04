@@ -100,7 +100,7 @@
       let secondNum = Number(rawSecond);
 
       try{
-        if(firstNum == "" || secondNum == ""){
+        if(rawFirst.trim() === "" || rawSecond.trim() === ""){
           throw new Error("No empty numbers");
         }
 
@@ -108,7 +108,7 @@
           throw new Error("Input must be valid numbers");
         }
 
-        if(operator === "/" && Number(secondNum) === 0){
+        if(operator === "/" && secondNum === 0){
           throw new Error("Division by zero is illegal");
         }
 
