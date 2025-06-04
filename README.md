@@ -1,6 +1,6 @@
 # Lab 9 - Starter
 
-## PAges URL: 
+## Pages URL: 
 https://johndecastro.github.io/Lab9_Starter/
 
 ## TrackJS Errors
