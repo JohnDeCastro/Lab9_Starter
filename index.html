@@ -128,7 +128,6 @@
         output.innerHTML = result;
 
       } catch (err) {
-        console.log("Error type:", err.constructor.name);
         if(err instanceof CalculationInputError){
           console.warn("Custom input error:", err.message);
         }else{
