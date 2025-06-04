@@ -106,11 +106,12 @@
         }
 
         const result = eval(`${firstNum} ${operator} ${secondNum}`);
-        if (isNan(result)){
+        if (isNaN(result)){
           throw new Error("Invalid calculation");
         }
 
-        output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+        output.innerHTML = result;
+        
       } catch (err) {
         console.error("Calculation error:", err.message);
         output.innerHTML = `Error: ${err.message}`;
