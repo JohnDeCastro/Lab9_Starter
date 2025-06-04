@@ -101,17 +101,22 @@
           throw new Error("No empty numbers");
         }
 
+        if(isNaN(firstNum) || isNaN(secondNum)){
+          throw new Error("Input must be valid numbers");
+        }
+
         if(operator === "/" && Number(secondNum) === 0){
           throw new Error("Division by zero is illegal");
         }
 
         const result = eval(`${firstNum} ${operator} ${secondNum}`);
+        
         if (isNaN(result)){
           throw new Error("Invalid calculation");
         }
 
         output.innerHTML = result;
-        
+
       } catch (err) {
         console.error("Calculation error:", err.message);
         output.innerHTML = `Error: ${err.message}`;
