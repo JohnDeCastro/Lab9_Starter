@@ -254,6 +254,24 @@
       }
     });
 
+    
+  window.onerror = function(message, source, lineno, colno, error) {
+    console.log("Global error caught:");
+    console.log("Message:", message);
+    console.log("Source:", source);
+    console.log("Line:", lineno);
+    console.log("Column:", colno);
+    console.log("Error object:", error);
+  };
+
+
+  const globalErrorBtn = errorBtns.find(btn => btn.textContent === "Trigger a Global Error");
+
+  globalErrorBtn.addEventListener("click", () => {
+    undefinedFunctionCall(); // This will throw a ReferenceError
+  });
+
+
   </script>
 </body>
 
