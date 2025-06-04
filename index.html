@@ -111,7 +111,6 @@
         if(operator === "/" && secondNum === 0){
           throw new Error("Division by zero is illegal");
         }
-        console.log(`Evaluating: ${firstNum} ${operator} ${secondNum}`);
         const result = eval(`${firstNum} ${operator} ${secondNum}`);
         
         if (isNaN(result)){
